@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leave Request</title>
+  
+  <script>
+    const webAppUrl = "https://script.google.com/macros/s/AKfycbxvy6v9Jd0kIbdUlG8NRl1MSEYWoSdziQHSeBPrl_RttY39KejITzbSiyIslK3W9uWotQ/exec";
+
+    // ตรวจสอบว่าเป็น iOS (iPhone/iPad) หรือไม่ -> ถ้าใช่ให้ Redirect ทันที
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || 
+                  (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+
+    if (isIOS) {
+      window.location.href = webAppUrl;
+    }
+  </script>
+
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background-color: #f8f9fa;
+    }
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ฝัง Web App ผ่าน iframe (นิ่ง 100% สำหรับ Windows/PC) -->
+  <iframe src="https://script.google.com/macros/s/AKfycbxvy6v9Jd0kIbdUlG8NRl1MSEYWoSdziQHSeBPrl_RttY39KejITzbSiyIslK3W9uWotQ/exec"></iframe>
+
+</body>
+</html>
